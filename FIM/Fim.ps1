@@ -5,7 +5,7 @@
 #how to make it e-mail you with powershell or use twillio api to send you a text message
 #Prompt user to monitor another directory once they choose to exit or are done monitoring the current directory
 #prompt user to use OptionC function inside of do while loop so  if user inputs C to exit after selecting another option they will be prompted to either exit or start again.
-
+#stop printing "....baseline.txt was created" 
 ###dd
 Function Prompt(){
 
@@ -38,21 +38,22 @@ Function Erase-Baseline-If-Already-Exists(){
     #}
 
 }
-
-if($response -eq "C".ToUpper()){
-        Write-Host "Exiting...."
-        break
-}
-
-$desiredDirectoryPath = Read-Host -Prompt "Please enter the directory path you'd like to monitor: "
-
 Function OptionC(){
-    if(-not (Test-Path $desiredDirectoryPath)){
-        Write-Host "Invalid directory path. Exiting..."
-        return
+    if($response -eq "C".ToUpper()){
+            Write-Host "Exiting...."
+            break
     }
 }
 $run = OptionC
+
+$desiredDirectoryPath = Read-Host -Prompt "Please enter the directory path you'd like to monitor: "
+
+if(-not (Test-Path $desiredDirectoryPath)){
+        Write-Host "Invalid directory path. Exiting..."
+        return
+}
+
+
 
 do{
     
