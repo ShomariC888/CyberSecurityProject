@@ -1,10 +1,11 @@
 ﻿
 #Improve upon this code by:
-#Let user pick which folder to monitor the files
+
 #recursive file monitoring to monitor all files in a folder structure 
-#Error checking: if user wants to monitor files and there is no baseline, add flow control to redirect user back to create a baseline
 #how to make it e-mail you with powershell or use twillio api to send you a text message
-#Prompt user to monitor another directory once they choose to exit.
+#Prompt user to monitor another directory once they choose to exit or are done monitoring the current directory
+#prompt user to use OptionC function inside of do while loop so  if user inputs C to exit after selecting another option they will be prompted to either exit or start again.
+
 ###dd
 Function Prompt(){
 
